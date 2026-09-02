@@ -1,0 +1,9 @@
+<div class="ui-message-bubble" 
+     [class.ui-message-bubble--primary]="variant() === 'primary'"
+     [class.ui-message-bubble--neutral]="variant() === 'neutral'"
+     [class.ui-message-bubble--has-tail]="tail()">
+  <ng-content></ng-content>
+</div>
+@if (timestamp()) {
+  <div class="ui-message-timestamp">{{ timestamp() }}</div>
+}

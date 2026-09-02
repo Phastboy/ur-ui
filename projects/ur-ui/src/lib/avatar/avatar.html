@@ -1,0 +1,5 @@
+@if (src()) {
+  <img [src]="src()" [alt]="alt()" class="ui-avatar-image" loading="lazy" />
+} @else {
+  <div class="ui-avatar-fallback">{{ initials() }}</div>
+}

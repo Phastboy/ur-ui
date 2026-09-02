@@ -1,0 +1,52 @@
+.ui-message-bubble-host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.ui-message-bubble-host.ui-message-bubble--start {
+  align-items: flex-start;
+}
+
+.ui-message-bubble-host.ui-message-bubble--end {
+  align-items: flex-end;
+}
+
+.ui-message-bubble {
+  max-width: 75%;
+  padding: var(--size-10) var(--size-14);
+  border-radius: var(--radius-xl);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
+  word-wrap: break-word;
+}
+
+/* Neutral variant (usually for received messages) */
+.ui-message-bubble--neutral {
+  background: var(--surface-container-high);
+  color: var(--text-primary);
+}
+
+/* Primary variant (usually for sent messages) */
+.ui-message-bubble--primary {
+  background: var(--clr-primary);
+  color: var(--clr-on-primary);
+}
+
+/* Tail styling for start alignment */
+.ui-message-bubble-host.ui-message-bubble--start .ui-message-bubble--has-tail {
+  border-bottom-left-radius: var(--size-4);
+}
+
+/* Tail styling for end alignment */
+.ui-message-bubble-host.ui-message-bubble--end .ui-message-bubble--has-tail {
+  border-bottom-right-radius: var(--size-4);
+}
+
+.ui-message-timestamp {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  margin-top: var(--size-4);
+  padding-inline: var(--size-4);
+}

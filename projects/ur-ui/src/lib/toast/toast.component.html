@@ -1,0 +1,12 @@
+@for (toast of toastService.toasts(); track toast.id) {
+  <div class="ui-toast ui-toast--{{ toast.type }}">
+    <div class="ui-toast-icon">
+      @switch (toast.type) {
+        @case ('success') { <svg lucideCheckCircle size="18"></svg> }
+        @case ('error') { <svg lucideXCircle size="18"></svg> }
+        @default { <svg lucideInfo size="18"></svg> }
+      }
+    </div>
+    <div class="ui-toast-message">{{ toast.message }}</div>
+  </div>
+}

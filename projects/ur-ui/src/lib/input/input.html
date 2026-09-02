@@ -1,0 +1,24 @@
+@if (label()) {
+  <label class="ui-input-label">{{ label() }}</label>
+}
+<div class="ui-input-wrapper">
+  <div class="ui-input-prefix">
+    <ng-content select="[prefix]"></ng-content>
+  </div>
+  
+  <input 
+    class="ui-input-native"
+    [type]="type()"
+    [placeholder]="placeholder()"
+    [disabled]="disabled()"
+    [value]="value()"
+    (input)="onInput($event)"
+  />
+
+  <div class="ui-input-suffix">
+    <ng-content select="[suffix]"></ng-content>
+  </div>
+</div>
+@if (error()) {
+  <span class="ui-input-error-msg">{{ error() }}</span>
+}
