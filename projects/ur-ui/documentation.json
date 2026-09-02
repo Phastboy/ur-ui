@@ -1,0 +1,918 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "Button",
+            "id": "component-Button-322fca857d955b0a31bd272f62126531c2e2f4fdaf82f462c37649f2243745a5108f4b3d6d9e9484970ebf77f11ca6c0de447816092a8b46f658606d243e439e",
+            "file": "projects/ur-ui/src/lib/button/button.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "host": {},
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "button[app-button], a[app-button]",
+            "styleUrls": [
+                "./button.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button.html"
+            ],
+            "templateVariables": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "appearance",
+                    "coverageIgnore": false,
+                    "defaultValue": "'solid'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ButtonAppearance",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 43,
+                    "rawdescription": "\n",
+                    "required": false
+                },
+                {
+                    "name": "disabled",
+                    "coverageIgnore": false,
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 46,
+                    "rawdescription": "\n",
+                    "required": false
+                },
+                {
+                    "name": "fullWidth",
+                    "coverageIgnore": false,
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 48,
+                    "rawdescription": "\n",
+                    "required": false
+                },
+                {
+                    "name": "intent",
+                    "coverageIgnore": false,
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ButtonIntent",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 42,
+                    "rawdescription": "\n",
+                    "required": false
+                },
+                {
+                    "name": "loading",
+                    "coverageIgnore": false,
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 47,
+                    "rawdescription": "\n",
+                    "required": false
+                },
+                {
+                    "name": "shape",
+                    "coverageIgnore": false,
+                    "defaultValue": "'default'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ButtonShape",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 44,
+                    "rawdescription": "\n",
+                    "required": false
+                },
+                {
+                    "name": "size",
+                    "coverageIgnore": false,
+                    "defaultValue": "'md'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ButtonSize",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 45,
+                    "rawdescription": "\n",
+                    "required": false
+                },
+                {
+                    "name": "type",
+                    "coverageIgnore": false,
+                    "defaultValue": "'button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ButtonType",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 41,
+                    "rawdescription": "\n",
+                    "required": false
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "classes",
+                    "coverageIgnore": false,
+                    "defaultValue": "computed(() => {\n    const intent = this.overrideIntent() || this.intent();\n    const appearance = this.overrideAppearance() || this.appearance();\n    const size = this.overrideSize() || this.size();\n\n    const classList = [\n      'btn',\n      `btn--${intent}`,\n      `btn--${appearance}`,\n      `btn--${size}`,\n    ];\n\n    if (this.shape() !== 'default') classList.push(`btn--shape-${this.shape()}`);\n    if (this.fullWidth()) classList.push('btn--full');\n    if (this.loading()) classList.push('is-loading');\n\n    return classList.join(' ');\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 57,
+                    "rawdescription": "\n"
+                },
+                {
+                    "name": "el",
+                    "coverageIgnore": false,
+                    "defaultValue": "inject(ElementRef)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 39,
+                    "rawdescription": "\n",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "isButton",
+                    "coverageIgnore": false,
+                    "defaultValue": "computed(() => this.el.nativeElement.tagName.toLowerCase() === 'button')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 55,
+                    "rawdescription": "\n"
+                },
+                {
+                    "name": "overrideAppearance",
+                    "coverageIgnore": false,
+                    "defaultValue": "signal<ButtonAppearance | null>(null)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 52,
+                    "rawdescription": "\n",
+                    "modifierKind": [
+                        148
+                    ]
+                },
+                {
+                    "name": "overrideIntent",
+                    "coverageIgnore": false,
+                    "defaultValue": "signal<ButtonIntent | null>(null)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 51,
+                    "rawdescription": "\n",
+                    "modifierKind": [
+                        148
+                    ]
+                },
+                {
+                    "name": "overrideSize",
+                    "coverageIgnore": false,
+                    "defaultValue": "signal<ButtonSize | null>(null)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 53,
+                    "rawdescription": "\n",
+                    "modifierKind": [
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onClick",
+                    "coverageIgnore": false,
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 76,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n",
+                    "description": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "coverageIgnore": false,
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "Spinner"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  Component,\n  input,\n  computed,\n  signal,\n  booleanAttribute,\n  ElementRef,\n  inject,\n  ViewEncapsulation,\n} from '@angular/core';\nimport { Spinner } from '../spinner/spinner';\n\nexport type ButtonType = 'button' | 'submit' | 'reset';\nexport type ButtonIntent = 'primary' | 'secondary' | 'danger';\nexport type ButtonAppearance = 'solid' | 'outline' | 'ghost' | 'link';\nexport type ButtonSize = 'xs' | 'sm' | 'md' | 'lg' | 'icon';\nexport type ButtonShape = 'default' | 'circle';\n\n@Component({\n  selector: 'button[app-button], a[app-button]',\n  standalone: true,\n  imports: [Spinner],\n  templateUrl: './button.html',\n  styleUrl: './button.css',\n  encapsulation: ViewEncapsulation.None,\n  host: {\n    '[attr.type]': 'isButton() ? type() : null',\n    '[attr.disabled]': '(isButton() && (disabled() || loading())) ? true : null',\n    '[attr.aria-disabled]': 'disabled() || loading() ? \"true\" : null',\n    '[attr.tabindex]': '(!isButton() && (disabled() || loading())) ? \"-1\" : null',\n    '[attr.data-intent]': 'intent()',\n    '[attr.data-appearance]': 'appearance()',\n    '[attr.data-size]': 'size()',\n    '[class]': 'classes()',\n    '(click)': 'onClick($event)',\n  },\n})\nexport class Button {\n  private el = inject(ElementRef);\n\n  type = input<ButtonType>('button');\n  intent = input<ButtonIntent>('primary');\n  appearance = input<ButtonAppearance>('solid');\n  shape = input<ButtonShape>('default');\n  size = input<ButtonSize>('md');\n  disabled = input<boolean, unknown>(false, { transform: booleanAttribute });\n  loading = input<boolean, unknown>(false, { transform: booleanAttribute });\n  fullWidth = input<boolean, unknown>(false, { transform: booleanAttribute });\n\n  // Override signals for sibling behaviors (e.g. TabTrigger) on the same host\n  readonly overrideIntent = signal<ButtonIntent | null>(null);\n  readonly overrideAppearance = signal<ButtonAppearance | null>(null);\n  readonly overrideSize = signal<ButtonSize | null>(null);\n\n  isButton = computed(() => this.el.nativeElement.tagName.toLowerCase() === 'button');\n\n  classes = computed(() => {\n    const intent = this.overrideIntent() || this.intent();\n    const appearance = this.overrideAppearance() || this.appearance();\n    const size = this.overrideSize() || this.size();\n\n    const classList = [\n      'btn',\n      `btn--${intent}`,\n      `btn--${appearance}`,\n      `btn--${size}`,\n    ];\n\n    if (this.shape() !== 'default') classList.push(`btn--shape-${this.shape()}`);\n    if (this.fullWidth()) classList.push('btn--full');\n    if (this.loading()) classList.push('is-loading');\n\n    return classList.join(' ');\n  });\n\n  onClick(event: Event) {\n    if (this.disabled() || this.loading()) {\n      event.preventDefault();\n      event.stopImmediatePropagation();\n    }\n  }\n}\n",
+            "styleUrl": "./button.css",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "/* ============================================================\n * BASE BUTTON STYLES\n * ============================================================ */\n.btn {\n  position: relative;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: var(--size-8);\n  height: var(--size-40);\n  padding: 0 var(--size-20);\n  border: none;\n  border-radius: var(--radius-sm);\n  font-family: var(--font-sans);\n  font-size: var(--font-size-md);\n  font-weight: var(--font-weight-semibold);\n  cursor: pointer;\n  transition:\n    background var(--transition-fast),\n    opacity var(--transition-fast),\n    border-color var(--transition-fast),\n    color var(--transition-fast);\n  outline: none;\n  text-decoration: none; /* For anchors */\n}\n\n.btn:disabled {\n  opacity: 0.55;\n  cursor: not-allowed;\n  pointer-events: none;\n}\n\n.btn:focus-visible {\n  outline: var(--size-2) solid var(--clr-primary);\n  outline-offset: var(--size-2);\n}\n\n/* ============================================================\n * LOADING UX\n * ============================================================ */\n.btn.is-loading {\n  pointer-events: none;\n}\n\n.btn.is-loading .btn__content {\n  opacity: 0; /* Hides content but preserves exact width */\n}\n\n.btn__content {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: inherit;\n  gap: inherit;\n  width: 100%;\n  height: 100%;\n}\n\n.btn__spinner {\n  position: absolute;\n  inset: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n/* ============================================================\n * INTENT VARIABLES\n * ============================================================ */\n.btn--primary {\n  --btn-base: var(--clr-primary);\n  --btn-on-base: var(--clr-on-primary);\n  --btn-hover: var(--clr-primary-dark);\n  --btn-container: var(--clr-primary-container);\n  --btn-outline: var(--clr-primary);\n}\n\n.btn--secondary {\n  --btn-base: var(--text-primary);\n  --btn-on-base: var(--surface-page);\n  --btn-hover: var(--text-secondary);\n  --btn-container: var(--surface-container);\n  --btn-outline: var(--border-default);\n}\n\n\n.btn--danger {\n  --btn-base: var(--clr-error);\n  --btn-on-base: var(--clr-on-error);\n  --btn-hover: color-mix(in oklch, var(--clr-error) 80%, black);\n  --btn-container: var(--clr-error-container);\n  --btn-outline: var(--clr-error);\n}\n\n/* ============================================================\n * APPEARANCES\n * ============================================================ */\n.btn--solid {\n  background: var(--btn-base);\n  color: var(--btn-on-base);\n  border: var(--size-2) solid transparent;\n}\n.btn--solid:not(:disabled):hover {\n  background: var(--btn-hover);\n}\n\n.btn--outline {\n  background: transparent;\n  color: var(--btn-base);\n  border: var(--size-2) solid var(--btn-outline);\n}\n.btn--outline:not(:disabled):hover {\n  background: var(--btn-container);\n}\n\n.btn--ghost {\n  background: transparent;\n  color: var(--btn-base);\n  border: var(--size-2) solid transparent;\n}\n.btn--ghost:not(:disabled):hover {\n  background: var(--btn-container);\n}\n\n\n.btn--link {\n  background: transparent;\n  color: var(--btn-base);\n  border-color: transparent;\n  padding: 0;\n  height: auto;\n}\n.btn--link:not(:disabled):hover {\n  text-decoration: underline;\n  text-underline-offset: var(--size-4);\n}\n\n\n/* ============================================================\n * SIZES\n * ============================================================ */\n.btn--xs {\n  height: var(--size-24);\n  padding: 0 var(--size-8);\n  font-size: var(--font-size-xs);\n  border-radius: var(--radius-xs);\n}\n\n.btn--sm {\n  height: var(--size-32);\n  padding: 0 var(--size-12);\n  font-size: var(--font-size-sm);\n}\n\n.btn--md {\n  height: var(--size-40);\n  padding: 0 var(--size-20);\n  font-size: var(--font-size-md);\n}\n\n.btn--lg {\n  height: var(--size-48);\n  padding: 0 var(--size-24);\n  font-size: var(--font-size-lg);\n  border-radius: var(--radius-md);\n}\n\n.btn--icon {\n  height: var(--size-40);\n  width: var(--size-40);\n  padding: 0;\n}\n\n.btn--full {\n  width: 100%;\n}\n\n/* ============================================================\n * SHAPES\n * ============================================================ */\n.btn--shape-circle {\n  padding: 0;\n  aspect-ratio: 1 / 1;\n  border-radius: var(--radius-pill);\n}\n",
+                    "styleUrl": "./button.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "relationships": {
+                "incoming": [
+                    {
+                        "name": "ButtonRegressionComponent",
+                        "type": "component"
+                    }
+                ],
+                "outgoing": [
+                    {
+                        "name": "Spinner",
+                        "type": "component"
+                    }
+                ]
+            },
+            "templateData": "@if (loading()) {\n  <app-spinner class=\"btn__spinner\" />\n}\n<span class=\"btn__content\">\n  <ng-content></ng-content>\n</span>\n"
+        },
+        {
+            "name": "ButtonRegressionComponent",
+            "id": "component-ButtonRegressionComponent-e13b836fb17c41f8e67b6c2df4da947b1ef12b1068adf478183a46e6afce6f6066b9a42703a8efd9f979b8df32efe588825d2a5236c8d2bd4c6183b7efec734b",
+            "file": "projects/ur-ui/src/lib/button/button.stories.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-button-regression",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div style=\"display: flex; flex-direction: column; gap: 3rem; padding: 2rem;\">\n  @for (intent of intents; track intent) {\n    <section>\n      <h2 style=\"margin-bottom: 1rem; text-transform: capitalize; font-family: sans-serif;\">\n        {{ intent }}\n      </h2>\n      <div style=\"display: flex; flex-direction: column; gap: 2rem;\">\n        @for (appearance of appearances; track appearance) {\n          <div style=\"display: flex; flex-direction: column; gap: 1rem;\">\n            <h3 style=\"margin: 0; font-family: sans-serif; font-size: 0.9rem; color: #666;\">\n              {{ appearance }}\n            </h3>\n\n            <!-- Sizes -->\n            <div style=\"display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;\">\n              @for (size of sizes; track size) {\n                <button app-button [intent]=\"intent\" [appearance]=\"appearance\" [size]=\"size\">\n                  Size {{ size }}\n                </button>\n              }\n            </div>\n\n            <!-- Modifiers -->\n            <div\n              style=\"display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-top: 0.5rem;\"\n            >\n              <button app-button [intent]=\"intent\" [appearance]=\"appearance\" loading>\n                Loading\n              </button>\n              <button app-button [intent]=\"intent\" [appearance]=\"appearance\" disabled>\n                Disabled\n              </button>\n              <button\n                app-button\n                [intent]=\"intent\"\n                [appearance]=\"appearance\"\n                shape=\"circle\"\n                aria-label=\"Like\"\n              >\n                <svg lucideHeart></svg>\n              </button>\n            </div>\n          </div>\n        }\n      </div>\n    </section>\n  }\n\n  <section>\n    <h2 style=\"margin-bottom: 1rem; font-family: sans-serif;\">Full Width</h2>\n    <button app-button intent=\"primary\" appearance=\"solid\" fullWidth>\n      I span the entire container\n    </button>\n  </section>\n  <!-- Icon Buttons -->\n  <section class=\"regression-section\">\n    <h3>Icon Buttons</h3>\n    <div class=\"row\">\n      <button\n        app-button\n        [size]=\"'icon'\"\n        [appearance]=\"'solid'\"\n        [shape]=\"'circle'\"\n        aria-label=\"Search\"\n      >\n        <svg lucideSearch></svg>\n      </button>\n      <button\n        app-button\n        [size]=\"'icon'\"\n        [appearance]=\"'outline'\"\n        [shape]=\"'circle'\"\n        aria-label=\"Search\"\n      >\n        <svg lucideSearch></svg>\n      </button>\n      <button\n        app-button\n        [size]=\"'icon'\"\n        [appearance]=\"'ghost'\"\n        [shape]=\"'circle'\"\n        aria-label=\"Search\"\n      >\n        <svg lucideSearch></svg>\n      </button>\n      <button\n        app-button\n        [size]=\"'icon'\"\n        [appearance]=\"'ghost'\"\n        [shape]=\"'circle'\"\n        disabled\n        aria-label=\"Search\"\n      >\n        <svg lucideSearch></svg>\n      </button>\n    </div>\n  </section>\n</div>\n",
+            "templateUrl": [],
+            "templateVariables": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "appearances",
+                    "coverageIgnore": false,
+                    "defaultValue": "['solid', 'outline', 'ghost', 'link'] as const",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 113,
+                    "rawdescription": "\n"
+                },
+                {
+                    "name": "intents",
+                    "coverageIgnore": false,
+                    "defaultValue": "['primary', 'secondary', 'danger'] as const",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 112,
+                    "rawdescription": "\n"
+                },
+                {
+                    "name": "sizes",
+                    "coverageIgnore": false,
+                    "defaultValue": "['xs', 'sm', 'md', 'lg'] as const",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 114,
+                    "rawdescription": "\n"
+                }
+            ],
+            "methodsClass": [],
+            "coverageIgnore": false,
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "Button"
+                },
+                {
+                    "name": "LucideSearch"
+                },
+                {
+                    "name": "LucideHeart"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import type { Meta, StoryObj } from '@storybook/angular-vite';\nimport { Button } from './button';\nimport { LucideSearch, LucideHeart } from '@lucide/angular';\nimport { Component, input } from '@angular/core';\n\n@Component({\n  standalone: true,\n  selector: 'app-button-regression',\n  imports: [Button, LucideSearch, LucideHeart],\n  template: `\n    <div style=\"display: flex; flex-direction: column; gap: 3rem; padding: 2rem;\">\n      @for (intent of intents; track intent) {\n        <section>\n          <h2 style=\"margin-bottom: 1rem; text-transform: capitalize; font-family: sans-serif;\">\n            {{ intent }}\n          </h2>\n          <div style=\"display: flex; flex-direction: column; gap: 2rem;\">\n            @for (appearance of appearances; track appearance) {\n              <div style=\"display: flex; flex-direction: column; gap: 1rem;\">\n                <h3 style=\"margin: 0; font-family: sans-serif; font-size: 0.9rem; color: #666;\">\n                  {{ appearance }}\n                </h3>\n\n                <!-- Sizes -->\n                <div style=\"display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;\">\n                  @for (size of sizes; track size) {\n                    <button app-button [intent]=\"intent\" [appearance]=\"appearance\" [size]=\"size\">\n                      Size {{ size }}\n                    </button>\n                  }\n                </div>\n\n                <!-- Modifiers -->\n                <div\n                  style=\"display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-top: 0.5rem;\"\n                >\n                  <button app-button [intent]=\"intent\" [appearance]=\"appearance\" loading>\n                    Loading\n                  </button>\n                  <button app-button [intent]=\"intent\" [appearance]=\"appearance\" disabled>\n                    Disabled\n                  </button>\n                  <button\n                    app-button\n                    [intent]=\"intent\"\n                    [appearance]=\"appearance\"\n                    shape=\"circle\"\n                    aria-label=\"Like\"\n                  >\n                    <svg lucideHeart></svg>\n                  </button>\n                </div>\n              </div>\n            }\n          </div>\n        </section>\n      }\n\n      <section>\n        <h2 style=\"margin-bottom: 1rem; font-family: sans-serif;\">Full Width</h2>\n        <button app-button intent=\"primary\" appearance=\"solid\" fullWidth>\n          I span the entire container\n        </button>\n      </section>\n      <!-- Icon Buttons -->\n      <section class=\"regression-section\">\n        <h3>Icon Buttons</h3>\n        <div class=\"row\">\n          <button\n            app-button\n            [size]=\"'icon'\"\n            [appearance]=\"'solid'\"\n            [shape]=\"'circle'\"\n            aria-label=\"Search\"\n          >\n            <svg lucideSearch></svg>\n          </button>\n          <button\n            app-button\n            [size]=\"'icon'\"\n            [appearance]=\"'outline'\"\n            [shape]=\"'circle'\"\n            aria-label=\"Search\"\n          >\n            <svg lucideSearch></svg>\n          </button>\n          <button\n            app-button\n            [size]=\"'icon'\"\n            [appearance]=\"'ghost'\"\n            [shape]=\"'circle'\"\n            aria-label=\"Search\"\n          >\n            <svg lucideSearch></svg>\n          </button>\n          <button\n            app-button\n            [size]=\"'icon'\"\n            [appearance]=\"'ghost'\"\n            [shape]=\"'circle'\"\n            disabled\n            aria-label=\"Search\"\n          >\n            <svg lucideSearch></svg>\n          </button>\n        </div>\n      </section>\n    </div>\n  `,\n})\nclass ButtonRegressionComponent {\n  intents = ['primary', 'secondary', 'danger'] as const;\n  appearances = ['solid', 'outline', 'ghost', 'link'] as const;\n  sizes = ['xs', 'sm', 'md', 'lg'] as const;\n}\n\nconst meta: Meta<Button> = {\n  title: 'Atoms/Button',\n  component: Button,\n  argTypes: {\n    intent: {\n      control: 'select',\n      options: ['primary', 'secondary', 'danger'],\n    },\n    appearance: {\n      control: 'select',\n      options: ['solid', 'outline', 'ghost', 'link'],\n    },\n    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'icon'] },\n  },\n};\n\nexport default meta;\n\ntype Story = StoryObj<Button>;\n\nexport const Default: Story = {\n  args: {\n    intent: 'primary',\n    appearance: 'solid',\n    size: 'md',\n  },\n  render: (args) => ({\n    props: args,\n    template: `<button app-button [intent]=\"intent\" [appearance]=\"appearance\" [size]=\"size\" [disabled]=\"disabled\" [loading]=\"loading\" [fullWidth]=\"fullWidth\" [type]=\"type\">Button Text</button>`,\n  }),\n};\n\nexport const Outline: Story = {\n  args: {\n    intent: 'primary',\n    appearance: 'outline',\n  },\n};\n\n\nexport const RegressionGrid: StoryObj<ButtonRegressionComponent> = {\n  render: () => ({\n    moduleMetadata: {\n      imports: [ButtonRegressionComponent],\n    },\n    template: `<app-button-regression />`,\n  }),\n};\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "relationships": {
+                "incoming": [],
+                "outgoing": [
+                    {
+                        "name": "Button",
+                        "type": "component"
+                    },
+                    {
+                        "name": "LucideSearch",
+                        "type": "module"
+                    },
+                    {
+                        "name": "LucideHeart",
+                        "type": "module"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Spinner",
+            "id": "component-Spinner-d4cd555659d171abbcd2500afaa6e2982beee9d41503625fde3d9277299cb200331203b57f52bc1dd22b6ac5f9048e16dbbd491f0dee2d5a0dfcb15ffb6d5441",
+            "file": "projects/ur-ui/src/lib/spinner/spinner.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "host": {},
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-spinner",
+            "styleUrls": [
+                "./spinner.css"
+            ],
+            "styles": [],
+            "template": "<div class=\"spinner\"></div>",
+            "templateUrl": [],
+            "templateVariables": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "coverageIgnore": false,
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, input, computed } from '@angular/core';\n\n@Component({\n  selector: 'app-spinner',\n  standalone: true,\n  template: '<div class=\"spinner\"></div>',\n  styleUrl: './spinner.css',\n  host: {\n    'role': 'status'\n  }\n})\nexport class Spinner {}\n",
+            "styleUrl": "./spinner.css",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".spinner {\n  display: inline-block;\n  width: var(--size-20);\n  height: var(--size-20);\n  border: var(--size-2) solid color-mix(in oklch, currentColor 30%, transparent);\n  border-left-color: currentColor;\n  border-radius: 50%;\n  animation: spin 1s linear infinite;\n}\n\n@keyframes spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n",
+                    "styleUrl": "./spinner.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "relationships": {
+                "incoming": [
+                    {
+                        "name": "Button",
+                        "type": "component"
+                    }
+                ],
+                "outgoing": []
+            }
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ur-ui/src/lib/button/button.stories.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    intent: 'primary',\n    appearance: 'solid',\n    size: 'md',\n  },\n  render: (args) => ({\n    props: args,\n    template: `<button app-button [intent]=\"intent\" [appearance]=\"appearance\" [size]=\"size\" [disabled]=\"disabled\" [loading]=\"loading\" [fullWidth]=\"fullWidth\" [type]=\"type\">Button Text</button>`,\n  }),\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ur-ui/src/lib/button/button.stories.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Button>",
+                "defaultValue": "{\n  title: 'Atoms/Button',\n  component: Button,\n  argTypes: {\n    intent: {\n      control: 'select',\n      options: ['primary', 'secondary', 'danger'],\n    },\n    appearance: {\n      control: 'select',\n      options: ['solid', 'outline', 'ghost', 'link'],\n    },\n    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'icon'] },\n  },\n}"
+            },
+            {
+                "name": "Outline",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ur-ui/src/lib/button/button.stories.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    intent: 'primary',\n    appearance: 'outline',\n  },\n}"
+            },
+            {
+                "name": "preview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ur-ui/.storybook/preview.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Preview",
+                "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n\n    a11y: {\n      // 'todo' - show a11y violations in the test UI only\n      // 'error' - fail CI on a11y violations\n      // 'off' - skip a11y checks entirely\n      test: 'todo',\n    },\n  },\n}"
+            },
+            {
+                "name": "RegressionGrid",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ur-ui/src/lib/button/button.stories.ts",
+                "coverageIgnore": false,
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<ButtonRegressionComponent>",
+                "defaultValue": "{\n  render: () => ({\n    moduleMetadata: {\n      imports: [ButtonRegressionComponent],\n    },\n    template: `<app-button-regression />`,\n  }),\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "ButtonAppearance",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "coverageIgnore": false,
+                "rawtype": "\"solid\" | \"outline\" | \"ghost\" | \"link\"",
+                "file": "projects/ur-ui/src/lib/button/button.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "rawdescription": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "ButtonIntent",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "coverageIgnore": false,
+                "rawtype": "\"primary\" | \"secondary\" | \"danger\"",
+                "file": "projects/ur-ui/src/lib/button/button.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "rawdescription": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "ButtonShape",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "coverageIgnore": false,
+                "rawtype": "\"default\" | \"circle\"",
+                "file": "projects/ur-ui/src/lib/button/button.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "rawdescription": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "ButtonSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "coverageIgnore": false,
+                "rawtype": "\"xs\" | \"sm\" | \"md\" | \"lg\" | \"icon\"",
+                "file": "projects/ur-ui/src/lib/button/button.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "rawdescription": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "ButtonType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "coverageIgnore": false,
+                "rawtype": "\"button\" | \"submit\" | \"reset\"",
+                "file": "projects/ur-ui/src/lib/button/button.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "rawdescription": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "coverageIgnore": false,
+                "rawtype": "StoryObj<Button>",
+                "file": "projects/ur-ui/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "rawdescription": "",
+                "description": "",
+                "kind": 184
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "projects/ur-ui/src/lib/button/button.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ur-ui/src/lib/button/button.stories.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    intent: 'primary',\n    appearance: 'solid',\n    size: 'md',\n  },\n  render: (args) => ({\n    props: args,\n    template: `<button app-button [intent]=\"intent\" [appearance]=\"appearance\" [size]=\"size\" [disabled]=\"disabled\" [loading]=\"loading\" [fullWidth]=\"fullWidth\" [type]=\"type\">Button Text</button>`,\n  }),\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ur-ui/src/lib/button/button.stories.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<Button>",
+                    "defaultValue": "{\n  title: 'Atoms/Button',\n  component: Button,\n  argTypes: {\n    intent: {\n      control: 'select',\n      options: ['primary', 'secondary', 'danger'],\n    },\n    appearance: {\n      control: 'select',\n      options: ['solid', 'outline', 'ghost', 'link'],\n    },\n    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'icon'] },\n  },\n}"
+                },
+                {
+                    "name": "Outline",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ur-ui/src/lib/button/button.stories.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    intent: 'primary',\n    appearance: 'outline',\n  },\n}"
+                },
+                {
+                    "name": "RegressionGrid",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ur-ui/src/lib/button/button.stories.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<ButtonRegressionComponent>",
+                    "defaultValue": "{\n  render: () => ({\n    moduleMetadata: {\n      imports: [ButtonRegressionComponent],\n    },\n    template: `<app-button-regression />`,\n  }),\n}"
+                }
+            ],
+            "projects/ur-ui/.storybook/preview.ts": [
+                {
+                    "name": "preview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ur-ui/.storybook/preview.ts",
+                    "coverageIgnore": false,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Preview",
+                    "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n\n    a11y: {\n      // 'todo' - show a11y violations in the test UI only\n      // 'error' - fail CI on a11y violations\n      // 'off' - skip a11y checks entirely\n      test: 'todo',\n    },\n  },\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "projects/ur-ui/src/lib/button/button.ts": [
+                {
+                    "name": "ButtonAppearance",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "coverageIgnore": false,
+                    "rawtype": "\"solid\" | \"outline\" | \"ghost\" | \"link\"",
+                    "file": "projects/ur-ui/src/lib/button/button.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "ButtonIntent",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "coverageIgnore": false,
+                    "rawtype": "\"primary\" | \"secondary\" | \"danger\"",
+                    "file": "projects/ur-ui/src/lib/button/button.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "ButtonShape",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "coverageIgnore": false,
+                    "rawtype": "\"default\" | \"circle\"",
+                    "file": "projects/ur-ui/src/lib/button/button.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "ButtonSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "coverageIgnore": false,
+                    "rawtype": "\"xs\" | \"sm\" | \"md\" | \"lg\" | \"icon\"",
+                    "file": "projects/ur-ui/src/lib/button/button.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "ButtonType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "coverageIgnore": false,
+                    "rawtype": "\"button\" | \"submit\" | \"reset\"",
+                    "file": "projects/ur-ui/src/lib/button/button.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ],
+            "projects/ur-ui/src/lib/button/button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "coverageIgnore": false,
+                    "rawtype": "StoryObj<Button>",
+                    "file": "projects/ur-ui/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ]
+        }
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "children": []
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/ur-ui/.storybook/preview.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ur-ui/src/lib/button/button.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonRegressionComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ur-ui/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ur-ui/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ur-ui/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Outline",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ur-ui/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "RegressionGrid",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ur-ui/src/lib/button/button.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ur-ui/src/lib/button/button.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Button",
+                "coveragePercent": 0,
+                "coverageCount": "0/16",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ur-ui/src/lib/button/button.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "ButtonAppearance",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ur-ui/src/lib/button/button.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "ButtonIntent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ur-ui/src/lib/button/button.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "ButtonShape",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ur-ui/src/lib/button/button.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "ButtonSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ur-ui/src/lib/button/button.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "ButtonType",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ur-ui/src/lib/spinner/spinner.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Spinner",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
