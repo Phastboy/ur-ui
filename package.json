@@ -1,6 +1,7 @@
 {
   "name": "ur-ui",
   "version": "0.0.0",
+  "private": true,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,8 +11,6 @@
     "storybook": "ng run ur-ui:storybook",
     "build-storybook": "ng run ur-ui:build-storybook"
   },
-  "private": true,
-  "packageManager": "pnpm@11.17.0",
   "dependencies": {
     "@angular/common": "^22.1.0",
     "@angular/compiler": "^22.1.0",
@@ -23,11 +22,6 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@analogjs/vite-plugin-angular": "latest",
-    "@angular-devkit/architect": "^0.2201.0",
-    "@angular-devkit/build-angular": "^22.1.0",
-    "@angular-devkit/core": "^22.1.0",
-    "@angular/animations": "^22.1.0",
     "@angular/build": "^22.1.6",
     "@angular/cli": "^22.1.6",
     "@angular/compiler-cli": "^22.1.0",
@@ -49,5 +43,17 @@
     "typescript": "~6.0.2",
     "vite": "latest",
     "vitest": "^4.0.8"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": ">=11.17.0",
+      "onFail": "error"
+    },
+    "runtime": {
+      "name": "node",
+      "version": ">=26.0.0",
+      "onFail": "error"
+    }
   }
 }
