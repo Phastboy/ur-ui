@@ -1,110 +1,118 @@
 import { Meta, StoryObj } from '@storybook/angular-vite';
-import {
-  List,
-  ListItem,
-  ListItemStart,
-  ListItemContent,
-  ListItemTitle,
-  ListItemDescription,
-  ListItemEnd,
+import { 
+  List, 
+  ListItem, 
+  ListItemStart, 
+  ListItemContent, 
+  ListItemTitle, 
+  ListItemDescription, 
+  ListItemEnd 
 } from './list';
-import { Component } from '@angular/core';
+import { LucideSettings, LucideShieldCheck, LucidePalette, LucideChevronRight, LucideUser, LucidePhone, LucideGlobe } from '@lucide/angular';
 
-@Component({
-  standalone: true,
-  selector: 'app-list-story',
-  imports: [
-    List,
-    ListItem,
-    ListItemStart,
-    ListItemContent,
-    ListItemTitle,
-    ListItemDescription,
-    ListItemEnd,
-  ],
-  template: `
-    <div style="max-width: 400px; padding: 20px;">
-      <ui-list [bordered]="bordered" [dividers]="dividers" [padding]="padding" [radius]="radius">
-        <button uiListItem>
-          <div uiListItemStart>
-            <div
-              style="width: 40px; height: 40px; background: var(--surface-container-high); border-radius: var(--radius-pill);"
-            ></div>
-          </div>
-          <div uiListItemContent>
-            <span uiListItemTitle>Alice Smith</span>
-            <span uiListItemDescription>Hey, how are you doing today?</span>
-          </div>
-          <div uiListItemEnd>
-            <span style="font-size: var(--font-size-xs);">12:30 PM</span>
-          </div>
-        </button>
-
-        <button uiListItem>
-          <div uiListItemStart>
-            <div
-              style="width: 40px; height: 40px; background: var(--surface-container-high); border-radius: var(--radius-pill);"
-            ></div>
-          </div>
-          <div uiListItemContent>
-            <span uiListItemTitle>Bob Johnson</span>
-            <span uiListItemDescription>Did you see the new UI update?</span>
-          </div>
-          <div uiListItemEnd>
-            <span style="font-size: var(--font-size-xs);">Yesterday</span>
-          </div>
-        </button>
-
-        <button uiListItem class="is-active">
-          <div uiListItemStart>
-            <div
-              style="width: 40px; height: 40px; background: var(--surface-container-high); border-radius: var(--radius-pill);"
-            ></div>
-          </div>
-          <div uiListItemContent>
-            <span uiListItemTitle>Design Team</span>
-            <span uiListItemDescription>Reviewing the latest mockups...</span>
-          </div>
-          <div uiListItemEnd>
-            <div
-              style="width: 8px; height: 8px; background: var(--clr-primary); border-radius: var(--radius-pill);"
-            ></div>
-          </div>
-        </button>
-      </ui-list>
-    </div>
-  `,
-})
-class ListStoryComponent {
-  bordered = true;
-  dividers = true;
-  padding = true;
-  radius = true;
-}
-
-const meta: Meta<ListStoryComponent> = {
-  title: 'Atoms/List',
-  component: ListStoryComponent,
+const meta: Meta<List> = {
+  title: 'Surfaces/List',
+  component: List,
   tags: ['autodocs'],
+  argTypes: {
+    bordered: { control: 'boolean' },
+    dividers: { control: 'boolean' },
+    padding: { control: 'boolean' },
+    radius: { control: 'boolean' }
+  },
+  render: (args) => ({
+    props: args,
+    moduleMetadata: {
+      imports: [
+        ListItem, 
+        ListItemStart, 
+        ListItemContent, 
+        ListItemTitle, 
+        ListItemDescription, 
+        ListItemEnd,
+        LucideSettings, LucideShieldCheck, LucidePalette, LucideChevronRight, LucideUser, LucidePhone, LucideGlobe
+      ],
+    },
+    template: `
+      <div style="max-width: 25rem; padding: var(--size-20); background: var(--surface-container); border-radius: var(--radius-xl);">
+        <h3 style="margin-bottom: var(--size-16); font-size: var(--size-14); color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Dynamic List Example</h3>
+        <ui-list [bordered]="bordered" [dividers]="dividers" [padding]="padding" [radius]="radius">
+          <button uiListItem>
+            <div uiListItemStart>
+              <div style="width: var(--size-40); height: var(--size-40); border-radius: var(--size-10); background: var(--clr-primary-container); color: var(--clr-on-primary-container); display: flex; align-items: center; justify-content: center;">
+                <svg lucideSettings></svg>
+              </div>
+            </div>
+            <div uiListItemContent>
+              <div uiListItemTitle>Discovery Preferences</div>
+              <div uiListItemDescription>Personalize your feed and interests</div>
+            </div>
+            <div uiListItemEnd>
+              <svg lucideChevronRight></svg>
+            </div>
+          </button>
+          
+          <button uiListItem>
+            <div uiListItemStart>
+              <div style="width: var(--size-40); height: var(--size-40); border-radius: var(--size-10); background: var(--clr-primary-container); color: var(--clr-on-primary-container); display: flex; align-items: center; justify-content: center;">
+                <svg lucideShieldCheck></svg>
+              </div>
+            </div>
+            <div uiListItemContent>
+              <div uiListItemTitle>Privacy & Security</div>
+              <div uiListItemDescription>Manage auth methods and account security</div>
+            </div>
+            <div uiListItemEnd>
+              <svg lucideChevronRight></svg>
+            </div>
+          </button>
+          
+          <button uiListItem>
+            <div uiListItemStart>
+              <div style="width: var(--size-40); height: var(--size-40); border-radius: var(--size-10); background: var(--clr-primary-container); color: var(--clr-on-primary-container); display: flex; align-items: center; justify-content: center;">
+                <svg lucidePalette></svg>
+              </div>
+            </div>
+            <div uiListItemContent>
+              <div uiListItemTitle>Appearance</div>
+              <div uiListItemDescription>Customize how Orita looks for you</div>
+            </div>
+            <div uiListItemEnd>
+              <svg lucideChevronRight></svg>
+            </div>
+          </button>
+        </ui-list>
+      </div>
+    `,
+  }),
 };
 
 export default meta;
-type Story = StoryObj<ListStoryComponent>;
+type Story = StoryObj<List>;
 
 export const Default: Story = {
   args: {
     bordered: true,
     dividers: true,
     padding: true,
-    radius: true,
-  },
+    radius: true
+  }
 };
 
-export const Minimal: Story = {
+export const InboxStyle: Story = {
+  args: {
+    bordered: false,
+    dividers: true,
+    padding: true,
+    radius: false
+  }
+};
+
+export const MenuStyle: Story = {
   args: {
     bordered: false,
     dividers: false,
     padding: true,
-    radius: false,
-  },
+    radius: false
+  }
 };

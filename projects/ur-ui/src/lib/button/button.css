@@ -83,6 +83,21 @@
   --btn-outline: var(--border-default);
 }
 
+.btn--success {
+  --btn-base: var(--clr-success);
+  --btn-on-base: var(--clr-on-success-container);
+  --btn-hover: color-mix(in oklch, var(--clr-success) 80%, black);
+  --btn-container: var(--clr-success-container);
+  --btn-outline: var(--clr-success);
+}
+
+.btn--warning {
+  --btn-base: var(--clr-warning);
+  --btn-on-base: var(--clr-on-warning-container);
+  --btn-hover: color-mix(in oklch, var(--clr-warning) 80%, black);
+  --btn-container: var(--clr-warning-container);
+  --btn-outline: var(--clr-warning);
+}
 
 .btn--danger {
   --btn-base: var(--clr-error);
@@ -122,6 +137,14 @@
   background: var(--btn-container);
 }
 
+.btn--soft {
+  background: var(--btn-container);
+  color: var(--btn-base);
+  border: var(--size-2) solid transparent;
+}
+.btn--soft:not(:disabled):hover {
+  background: color-mix(in oklch, var(--btn-container) 90%, black);
+}
 
 .btn--link {
   background: transparent;
@@ -135,6 +158,26 @@
   text-underline-offset: var(--size-4);
 }
 
+.btn--plain {
+  background: transparent;
+  color: var(--btn-base);
+  border: var(--size-2) solid transparent;
+}
+.btn--plain:not(:disabled):hover {
+  color: var(--btn-hover);
+  background: color-mix(in oklch, var(--text-primary) 5%, transparent);
+}
+
+.btn--glass {
+  background: color-mix(in oklch, var(--text-on-dark) 25%, transparent);
+  backdrop-filter: blur(var(--size-8));
+  -webkit-backdrop-filter: blur(var(--size-8));
+  border: var(--size-1) solid color-mix(in oklch, var(--text-on-dark) 20%, transparent);
+  color: #ffffff;
+}
+.btn--glass:not(:disabled):hover {
+  background: color-mix(in oklch, var(--text-on-dark) 40%, transparent);
+}
 
 /* ============================================================
  * SIZES
@@ -178,8 +221,26 @@
 /* ============================================================
  * SHAPES
  * ============================================================ */
+.btn--shape-square,
 .btn--shape-circle {
   padding: 0;
   aspect-ratio: 1 / 1;
+}
+
+.btn--shape-circle {
   border-radius: var(--radius-pill);
+}
+
+.btn--shape-pill {
+  border-radius: var(--radius-pill);
+}
+
+/* ============================================================
+ * LAYOUTS
+ * ============================================================ */
+.btn--layout-vertical {
+  flex-direction: column;
+  height: auto;
+  padding: var(--size-12) var(--size-16);
+  gap: var(--size-4);
 }

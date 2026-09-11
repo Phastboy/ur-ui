@@ -1,7 +1,7 @@
 ui-list {
   display: flex;
   flex-direction: column;
-  background: var(--surface-card);
+  background: var(--surface-default);
 }
 
 ui-list.ui-list--bordered {
@@ -97,5 +97,5 @@ ui-list.ui-list--dividers > :not(:first-child) > .ui-list-item {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: var(--text-muted);
+  color: var(--text-tertiary);
 }

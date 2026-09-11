@@ -1,39 +1,82 @@
 import { Meta, StoryObj } from '@storybook/angular-vite';
 import { Avatar } from './avatar';
-import { Component } from '@angular/core';
 
-@Component({
-  standalone: true,
-  selector: 'app-avatar-story',
-  imports: [Avatar],
-  template: `
-    <div style="display: flex; gap: 20px; align-items: center; padding: 20px;">
-      <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
-        <ui-avatar size="sm" initials="ab"></ui-avatar>
-        <span style="font-size: 12px; color: var(--text-secondary)">Small</span>
-      </div>
-
-      <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
-        <ui-avatar size="md" initials="cd"></ui-avatar>
-        <span style="font-size: 12px; color: var(--text-secondary)">Medium</span>
-      </div>
-
-      <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
-        <ui-avatar size="lg" initials="ef"></ui-avatar>
-        <span style="font-size: 12px; color: var(--text-secondary)">Large</span>
-      </div>
-    </div>
-  `,
-})
-class AvatarStoryComponent {}
-
-const meta: Meta<AvatarStoryComponent> = {
+const meta: Meta<Avatar> = {
   title: 'Atoms/Avatar',
-  component: AvatarStoryComponent,
+  component: Avatar,
   tags: ['autodocs'],
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
+    },
+    shape: {
+      control: 'radio',
+      options: ['circle', 'rounded', 'square'],
+    },
+    status: {
+      control: 'select',
+      options: ['online', 'offline', 'away', 'busy', undefined],
+    },
+  },
+  render: (args) => ({
+    props: args,
+    template: `
+      <app-avatar
+        [src]="src"
+        [alt]="alt"
+        [fallback]="fallback"
+        [size]="size"
+        [shape]="shape"
+        [loading]="loading"
+        [status]="status"
+      ></app-avatar>
+    `,
+  }),
 };
 
 export default meta;
-type Story = StoryObj<AvatarStoryComponent>;
+type Story = StoryObj<Avatar>;
 
-export const Default: Story = {};
+export const Image: Story = {
+  args: {
+    src: 'https://i.pravatar.cc/150?img=11',
+    alt: 'John Doe',
+    size: 'md',
+    shape: 'circle',
+  },
+};
+
+export const FallbackInitials: Story = {
+  args: {
+    fallback: 'JD',
+    size: 'md',
+    shape: 'circle',
+  },
+};
+
+export const FallbackIcon: Story = {
+  args: {
+    size: 'md',
+    shape: 'circle',
+  },
+};
+
+export const WithStatus: Story = {
+  args: {
+    src: 'https://i.pravatar.cc/150?img=32',
+    alt: 'Jane Smith',
+    fallback: 'JS',
+    size: 'lg',
+    shape: 'circle',
+    status: 'online',
+  },
+};
+
+export const RoundedBrand: Story = {
+  args: {
+    fallback: 'BRAND',
+    size: 'xl',
+    shape: 'rounded',
+  },
+};

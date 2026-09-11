@@ -1,4 +1,4 @@
-import { Component, Directive, ViewEncapsulation, input } from '@angular/core';
+import { Component, Directive, ViewEncapsulation, input, computed } from '@angular/core';
 
 @Component({
   selector: 'ui-list',
@@ -23,41 +23,41 @@ export class List {
 @Directive({
   selector: '[uiListItem]',
   standalone: true,
-  host: { class: 'ui-list-item' },
+  host: { 'class': 'ui-list-item' }
 })
 export class ListItem {}
 
 @Directive({
   selector: '[uiListItemStart]',
   standalone: true,
-  host: { class: 'ui-list-item-start' },
+  host: { 'class': 'ui-list-item-start' }
 })
 export class ListItemStart {}
 
 @Directive({
   selector: '[uiListItemContent]',
   standalone: true,
-  host: { class: 'ui-list-item-content' },
+  host: { 'class': 'ui-list-item-content' }
 })
 export class ListItemContent {}
 
 @Directive({
   selector: '[uiListItemTitle]',
   standalone: true,
-  host: { class: 'ui-list-item-title' },
+  host: { 'class': 'ui-list-item-title' }
 })
 export class ListItemTitle {}
 
 @Directive({
   selector: '[uiListItemDescription]',
   standalone: true,
-  host: { class: 'ui-list-item-description' },
+  host: { 'class': 'ui-list-item-description' }
 })
 export class ListItemDescription {}
 
 @Directive({
   selector: '[uiListItemEnd]',
   standalone: true,
-  host: { class: 'ui-list-item-end' },
+  host: { 'class': 'ui-list-item-end' }
 })
 export class ListItemEnd {}
